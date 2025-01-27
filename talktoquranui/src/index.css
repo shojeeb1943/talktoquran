@@ -1,0 +1,143 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #6692dd;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Styles for the conversation box */
+.conversation-box {
+  overflow-y: auto;
+  height: 330px; /* Adjust height as needed */
+}
+
+/* Styles for the scrollbar */
+.conversation-box::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+.conversation-box::-webkit-scrollbar-track {
+  background: #f1f1f100; /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+.conversation-box::-webkit-scrollbar-thumb {
+  background: #86e7ff; /* Background of the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.conversation-box::-webkit-scrollbar-thumb:hover {
+  background: #696969; /* Background of the scrollbar thumb on hover */
+}
+@keyframes magicChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button-magic-animation {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-magic-animation:active {
+  animation: magicChange 0.3s ease;
+  transform: scale(0.95);
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.75;
+  }
+}
+
+.bg-god-ray {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 0, 0.3) 0%,
+    rgba(255, 255, 0, 0) 70%
+  );
+}
+
+.animate-pulse {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.message-text {
+  word-wrap: break-word; /* Allows long words to be broken and wrapped to the next line */
+  white-space: pre-wrap; /* Preserves whitespace and wraps text */
+  max-width: 100%; /* Ensures the text does not exceed the width of its container */
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column; /* Stack messages vertically */
+  /* Adjust width and max-width as necessary to fit your design */
+}
+@keyframes customPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4; /* Adjust the opacity to make the pulse more noticeable */
+  }
+}
+.custom-pulse {
+  animation: customPulse 1.5s infinite ease-in-out;
+}
+.message-container {
+  overflow-y: auto;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out; /* Adjust timing as needed */
+}
+.message-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px; /* Match your desired border-radius */
+  background: linear-gradient(
+    270.06deg,
+    rgba(222, 222, 222, 0.3) -5.64%,
+    rgba(109, 109, 109, 0.3) 103.24%
+  );
+  z-index: -1;
+}

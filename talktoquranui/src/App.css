@@ -1,0 +1,198 @@
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.bg-light {
+  background: radial-gradient(76.88% 100% at 50% 0%, #202325 0%, #1d1e1f 100%),
+    #fff;
+}
+
+.light-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  overflow: hidden;
+  z-index: 0; /* Keep the light below other content */
+}
+
+.light-ray {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(241, 205, 175, 1) 0%,
+    rgba(58, 56, 55, 1) 100%
+  );
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  animation: pulse 3s infinite ease-in-out;
+  filter: blur(1000px); /* Adjust the px value to increase/decrease the blur */
+  border: 1px solid red;
+}
+
+/* Additional layer for more color depth using the second gradient */
+.light-ray::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 172, 102, 1) 0%,
+    rgba(71, 67, 64, 1) 100%
+  );
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  animation: pulse 3s infinite ease-in-out alternate; /* Use alternate to vary the animation from the parent */
+  filter: blur(1000px); /* More blur to create a softer light effect */
+  mix-blend-mode: multiply; /* Blend the two gradients */
+  opacity: 0.001; /* Adjust opacity to prevent overpowering the primary gradient */
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    filter: brightness(0.75);
+  }
+  50% {
+    filter: brightness(1);
+  }
+}
+
+/* Add a blur for more realism */
+/* .light-ray::before {
+  content: "";
+  position: absolute;
+  top: -80%;
+  right: -80%;
+  bottom: -80%;
+  left: -80%;
+  background: inherit;
+  filter: blur(30px);
+} */
+
+/* Add another layer of brightness change */
+/* .light-ray::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shift 5s infinite ease-in-out;
+} */
+
+@keyframes shift {
+  0%,
+  100% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+}
+.home-component-classname {
+  /* Replace with the actual class or id used within the <Home /> component */
+  position: relative;
+  z-index: 1;
+}
+/* Add more as needed, incrementing the delay */
+@font-face {
+  font-family: "Quantify"; /* Give your font a name */
+  src: url("./Assets/Quantify.ttf") format("truetype"); /* Specify the path to your .ttf file */
+  font-weight: normal;
+  font-style: normal;
+}
+nav {
+  will-change: transform, opacity;
+}
+/* Style the entire scrollbar */
+
+/* This styles the main scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1d1e1f; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dadce0; /* color of the scroll thumb */
+  border-radius: 6px; /* roundness of the scroll thumb */
+  border: 3px solid #ffffff00; /* creates padding around scroll thumb */
+}
+
+/* Hover styles for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #b6b4b4; /* color of the scroll thumb when hovered */
+}
+
+/* This styles the scrollbar for text areas specifically */
+textarea::-webkit-scrollbar {
+  width: 8px; /* narrower scrollbar for text areas */
+}
+
+textarea::-webkit-scrollbar-track {
+  background: #ffffff; /* lighter tracking area for text areas */
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #6e6464; /* darker thumb for text areas */
+  border-radius: 4px;
+  border: 2px solid #e0e0e0; /* creates padding around scroll thumb */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.suggestions-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.suggestions-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.bg-gr-right {
+  background: linear-gradient(
+    270deg,
+    #1e1f20 25.01%,
+    rgba(33, 35, 36, 0) 89.33%
+  );
+}
+.bg-gr-left {
+  background: linear-gradient(
+    90deg,
+    #1e1f20 25.01%,
+    rgba(33, 35, 36, 0) 89.33%
+  );
+}
+
+/*Button style*/
+/* Base button styles, adjust according to your setup */
+.button-base {
+  border-radius: 8px;
+  background-image: linear-gradient(to right, #fbe2b1 50%, #fff4ea 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.4s ease-in-out;
+}
+
+.button-base:hover {
+  background-position: left bottom;
+}
